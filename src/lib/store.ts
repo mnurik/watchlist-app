@@ -160,13 +160,13 @@ export const updateAllSymbols = (batch: BatchRespose) => {
 		const watchlists = st.watchlists.map((w) => {
 			return {
 				...w,
-				symbols: w.symbols.map((s) => {
-					if (typeof batch[s.symbol] !== 'undefined') {
+				symbols: w.symbols.map((symbol) => {
+					if (typeof batch[symbol.symbol] !== 'undefined') {
 						return {
-							...mapBatchResult(batch[s.symbol])
+							...mapBatchResult(batch[symbol.symbol])
 						};
 					} else {
-						return s;
+						return symbol;
 					}
 				})
 			};

@@ -84,6 +84,7 @@
 
 	img {
 		width: 1rem;
+		cursor: pointer;
 	}
 
 	.timeInfo {
