@@ -1,4 +1,4 @@
-import { IEX_CLOUD_API_TOKEN, IEX_CLOUD_URI, TASTY_WORKS_URI } from './constants';
+import { IEX_CLOUD_API_TOKEN, IEX_CLOUD_URI, SYMBOLS_SEARCH_URI } from './constants';
 import { updateAllSymbols } from './store';
 import type { Batch, BatchRespose, MarketSymbol, SymbolChart, SymbolDetail } from '../types';
 
@@ -40,7 +40,7 @@ export const fetchSmybolsAndUpdateStore = async (
 
 export const getSymbolsBySearch = async (searchValue: string): Promise<SymbolDetail[]> => {
 	try {
-		const response = await fetch(`${TASTY_WORKS_URI}/symbols/search/${searchValue}`);
+		const response = await fetch(`${SYMBOLS_SEARCH_URI}/symbols/search/${searchValue}`);
 	
 		const { data: { items } } = await response.json();
 		return items;
